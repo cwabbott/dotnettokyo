@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -19,5 +21,18 @@ namespace DotNetTokyo.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        //protected void Application_BeginRequest()
+        //{
+        //    var culture = Request["culture"];
+        //    if (culture == null) culture = "en-US";
+        //    var ci = CultureInfo.GetCultureInfo(culture);
+
+        //    Thread.CurrentThread.CurrentCulture = ci;
+        //    Thread.CurrentThread.CurrentUICulture = ci;
+
+        //    var cookie = new HttpCookie("_culture", ci.Name);
+        //    Response.Cookies.Add(cookie);
+        //}
     }
 }

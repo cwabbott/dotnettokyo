@@ -88,7 +88,7 @@ namespace DotNetTokyo.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speakers and presenters wanted!.
+        ///   Looks up a localized string similar to Speakers and talks wanted!.
         /// </summary>
         public static string HomepageBoxoutHeader1 {
             get {

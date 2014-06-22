@@ -15,9 +15,10 @@ namespace DotNetTokyo.Web
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{culture}/{controller}/{action}/{id}",
+                defaults: new { culture = "undefined", controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
 
             routes.LowercaseUrls = true;
         }
