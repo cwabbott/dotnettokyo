@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    /*padding-top: 50px; */
     padding-bottom: 20px;
 }
 
@@ -14,4 +14,18 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.jumbotron.dark-bg {
+    background-color: #3e3c41;
+    color: white;
+    background-image: url('tokyo_bg.jpg');
+    background-position: center top;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .jumbotron.dark-bg {
+        background-image: url('tokyo_bg@2x.jpg');
+        background-size: 2000px 563px;
+    }
 }
