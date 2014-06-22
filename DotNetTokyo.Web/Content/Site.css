@@ -52,6 +52,8 @@ textarea {
     float: right;
     height: 150px;
     width: 150px;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,1));
+    filter: url(shadow.svg#drop-shadow);
 }
 
 .navbar.navbar-transparent {
