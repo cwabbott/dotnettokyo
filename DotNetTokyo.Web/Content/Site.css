@@ -48,3 +48,9 @@ textarea {
         background-size: 2000px 563px;
     }
 }
+
+.jumbotron .logo-box {
+    float: right;
+    height: 150px;
+    width: 150px;
+}

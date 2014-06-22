@@ -149,6 +149,15 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\dotnettokyo-prod.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="icons\apple-touch-icon-114x114.png" />
+    <Content Include="icons\apple-touch-icon-120x120.png" />
+    <Content Include="icons\apple-touch-icon-144x144.png" />
+    <Content Include="icons\apple-touch-icon-152x152.png" />
+    <Content Include="icons\apple-touch-icon-57x57.png" />
+    <Content Include="icons\apple-touch-icon-72x72.png" />
+    <Content Include="icons\apple-touch-icon-76x76.png" />
+    <Content Include="icons\apple-touch-icon.png" />
+    <Content Include="icons\favicon.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
