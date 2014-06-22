@@ -3,6 +3,20 @@
     padding-bottom: 20px;
 }
 
+/* use adobe font folio */
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: "museo-sans", sans-serif;
+    font-weight: 300;
+}
+
+.jumbotron p {
+    font-weight: 700;
+}
+
+h1 {
+    font-weight: 100;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -19,8 +33,13 @@ textarea {
 .jumbotron.dark-bg {
     background-color: #3e3c41;
     color: white;
+    
     background-image: url('tokyo_bg.jpg');
     background-position: center top;
+}
+
+.jumbotron.dark-bg h1, .jumbotron.dark-bg .lead {
+    text-shadow: 0px 0px 10px #000;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
