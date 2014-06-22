@@ -59,6 +59,10 @@ textarea {
     border: 0px;
 }
 
+.navbar-fixed-top {
+    position: absolute; /* don't scroll the navbar down with the page '*/
+}
+
 @media (max-width: 767px) {
     .jumbotron .logo-box {
         float: none;
