@@ -118,24 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CallToActionText" xml:space="preserve">
-    <value>Register your interest on Meetup.com</value>
+    <value>すぐに Meetup.com で登録</value>
   </data>
   <data name="HomepageBoxoutContent1" xml:space="preserve">
-    <value>If you want to do a technology talk to the group or just want to show something off, in English or Japanese, email the organizer Ed Andersen: mail (at) edandersen.com.</value>
+    <value>テクノロジートークをしたい方を募集しています。英語・日本語どちらでも結構です。エド・アンダーセンまでメールをお願いします。mail(at)edandersen.com</value>
   </data>
   <data name="HomepageBoxoutContent2" xml:space="preserve">
-    <value>Join the Meetup.com group for updates on our first meetup.</value>
+    <value>Meetup.comのグループに参加して、最初のミートアップの情報をチェックしよう。</value>
   </data>
   <data name="HomepageBoxoutHeader1" xml:space="preserve">
-    <value>Speakers and talks wanted!</value>
+    <value>スピーカーとお題を募集しています!</value>
   </data>
   <data name="HomepageBoxoutHeader2" xml:space="preserve">
-    <value>Register for updates</value>
+    <value>更新情報を受け取る</value>
   </data>
   <data name="SiteTitle" xml:space="preserve">
-    <value>Tokyo .NET and Mono Developers User Group (japanese)</value>
+    <value>東京.NET/Monoユーザ会</value>
   </data>
   <data name="TitleSubheading" xml:space="preserve">
-    <value>We are putting together a User Group for developers using C#, .NET, Unity 3D, Xamarin, Azure and other related technologies in the Tokyo area. Join us!</value>
+    <value>C#, .NET, Unity 3D, Xamarin, Azureに関するユーザグループを結成します。興味のある方の参加をお待ちしています!</value>
   </data>
 </root>
