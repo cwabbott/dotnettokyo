@@ -52,7 +52,7 @@ namespace DotNetTokyo.Web.Models
         {
             get
             {
-                var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+                var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Unspecified);
                 return epoch.AddMilliseconds(time);
             }
         }
