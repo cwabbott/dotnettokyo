@@ -22,5 +22,12 @@ namespace DotNetTokyo.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
+        public override string GetVaryByCustomString(HttpContext context, string arg)
+        {
+            if (arg == "url") return context.Request.Path;
+
+            return base.GetVaryByCustomString(context, arg);
+        }
+
     }
 }

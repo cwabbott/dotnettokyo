@@ -1,17 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
 using DotNetTokyo.Web.Helpers;
+using DotNetTokyo.Web.Services;
 
 namespace DotNetTokyo.Web.Controllers
 {
     public class HomeController : LocalizedController
     {
-        public ActionResult Index()
+        private IMeetupService meetupService;
+
+        public HomeController()
         {
-            return View();
+            // TODO: Switch to DI
+            meetupService = new MeetupService(new HttpClient());
+        }
+
+        [OutputCache(VaryByCustom = "url", Duration = 3600)]
+        public async Task<ActionResult> Index()
+        {
+            return View(await meetupService.GetUpcomingEvents());
         }
     }
 }

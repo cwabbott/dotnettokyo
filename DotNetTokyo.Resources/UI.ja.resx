@@ -138,4 +138,7 @@
   <data name="TitleSubheading" xml:space="preserve">
     <value>C#, .NET, Unity 3D, Xamarin, Azureに関するユーザグループを結成します。興味のある方の参加をお待ちしています!</value>
   </data>
+  <data name="UpcomingEvents" xml:space="preserve">
+    <value>今後のイベント</value>
+  </data>
 </root>

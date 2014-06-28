@@ -106,6 +106,24 @@ namespace DotNetTokyo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No events are currently planned. Stay tuned for more info!.
+        /// </summary>
+        public static string NoUpcomingEvents {
+            get {
+                return ResourceManager.GetString("NoUpcomingEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RSVP.
+        /// </summary>
+        public static string RSVP {
+            get {
+                return ResourceManager.GetString("RSVP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tokyo .NET and Mono Developers User Group.
         /// </summary>
         public static string SiteTitle {
@@ -120,6 +138,15 @@ namespace DotNetTokyo.Resources {
         public static string TitleSubheading {
             get {
                 return ResourceManager.GetString("TitleSubheading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upcoming events.
+        /// </summary>
+        public static string UpcomingEvents {
+            get {
+                return ResourceManager.GetString("UpcomingEvents", resourceCulture);
             }
         }
     }
