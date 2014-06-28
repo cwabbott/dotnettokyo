@@ -59,11 +59,7 @@ namespace DotNetTokyo.Web.Models
 
         public DateTime DateTimeLocal
         {
-            get
-            {
-                var offset = new DateTimeOffset(DateTimeUtc.ToLocalTime(), TimeSpan.FromMilliseconds(utc_offset));
-                return offset.DateTime;
-            }
+            get { return DateTimeUtc.AddMilliseconds(utc_offset); }
         }
     }
 
