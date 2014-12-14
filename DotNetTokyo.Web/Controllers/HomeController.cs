@@ -24,7 +24,10 @@ namespace DotNetTokyo.Web.Controllers
         [OutputCache(VaryByCustom = "url", Duration = 3600)]
         public async Task<ActionResult> Index()
         {
-            return View(await meetupService.GetUpcomingEvents());
+            // the meetup is not currently running - prevent blowing up incase meetup.com removes it
+            // return View(await meetupService.GetUpcomingEvents());
+
+            return View(new List<Models.Event>());
         }
     }
 }
