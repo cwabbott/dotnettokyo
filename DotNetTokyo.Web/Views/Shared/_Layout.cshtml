@@ -28,29 +28,29 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script type="text/javascript" src="//use.typekit.net/feg5cdm.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 </head>
 <body>
     @* Use this once we have some actual content *@
     <div class="navbar navbar-inverse navbar-fixed-top navbar-transparent">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @*@Html.ActionLink(UI.SiteTitle, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                        <li>@Html.ActionLink("English", "Index", "Home", new {culture = "en"}, new{})</li>
-                        <li>@Html.ActionLink("日本語", "Index", "Home", new { culture = "ja" }, new { })</li>
-                    </ul>
-                </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink(UI.SiteTitle, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    <li>@Html.ActionLink("English", "Index", "Home", new { culture = "en" }, new { })</li>
+                    <li>@Html.ActionLink("日本語", "Index", "Home", new { culture = "ja" }, new { })</li>
+                </ul>
             </div>
         </div>
+    </div>
 
     @RenderSection("widearea")
 
@@ -61,8 +61,10 @@
             <p>&copy; @DateTime.Now.Year - @UI.SiteTitle</p>
         </footer>
     </div>
-    
-    <a href="https://github.com/edandersen/dotnettokyo" class="hidden-xs"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <a href="https://github.com/cwabbott/dotnettokyo" class="hidden-xs">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
