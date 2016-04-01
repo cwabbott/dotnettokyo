@@ -27,8 +27,8 @@ namespace DotNetTokyo.Web.Services
         public async Task<IEnumerable<Event>> GetUpcomingEvents()
         {
             var result = await client.GetStringAsync(UpcomingEventsApiUrl);
-            var upcoming = JsonConvert.DeserializeObject<UpcomingEventsResponse>(result);
-            return upcoming.results ?? Enumerable.Empty<Event>();
+            var upcoming = JsonConvert.DeserializeObject<IList<Event>>(result);
+            return upcoming ?? Enumerable.Empty<Event>();
         }
     }
 }
