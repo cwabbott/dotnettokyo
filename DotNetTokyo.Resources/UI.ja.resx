@@ -141,4 +141,7 @@
   <data name="UpcomingEvents" xml:space="preserve">
     <value>今後のイベント</value>
   </data>
+  <data name="NoUpcomingEvents" xml:space="preserve">
+    <value>現在イベントがありません。少々お待ちください。</value>
+  </data>
 </root>
