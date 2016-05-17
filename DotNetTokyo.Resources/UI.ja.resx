@@ -133,12 +133,15 @@
     <value>更新情報を受け取る</value>
   </data>
   <data name="SiteTitle" xml:space="preserve">
-    <value>東京.NET/Monoユーザ会</value>
+    <value>東京.NET開発者ユーザ会</value>
   </data>
   <data name="TitleSubheading" xml:space="preserve">
     <value>C#, .NET, Unity 3D, Xamarin, Azureに関するユーザグループを結成します。興味のある方の参加をお待ちしています!</value>
   </data>
   <data name="UpcomingEvents" xml:space="preserve">
     <value>今後のイベント</value>
+  </data>
+  <data name="NoUpcomingEvents" xml:space="preserve">
+    <value>現在イベントがありません。少々お待ちください。</value>
   </data>
 </root>
