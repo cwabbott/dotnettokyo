@@ -1,6 +1,7 @@
 ﻿using DotNetTokyo.Web.Models;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
@@ -31,9 +32,7 @@ namespace DotNetTokyo.Web.Services
 
             var result = await CallApi(HttpVerbs.Get, apiUri);
             if (result.IsSuccessStatusCode) {
-                var eventObjects = JObject.Parse(result.Content.ReadAsStringAsync().Result);
-                foreach (var eventObject in eventObjects)
-                    events.Add(eventObject.Value.ToObject<Event>());
+                events = JsonConvert.DeserializeObject<IEnumerable<Event>>(result.Content.ReadAsStringAsync().Result).ToList();
             }
 
             return events;
