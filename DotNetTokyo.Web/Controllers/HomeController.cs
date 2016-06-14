@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using DotNetTokyo.Web.Services;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Caching;
 using System.Web.Mvc;
-using DotNetTokyo.Web.Helpers;
-using DotNetTokyo.Web.Services;
 
 namespace DotNetTokyo.Web.Controllers
 {

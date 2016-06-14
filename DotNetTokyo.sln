@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTokyo.Web", "DotNetTokyo.Web\DotNetTokyo.Web.csproj", "{6A1CF020-307A-486C-8F5A-DAEBEC361276}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTokyo.Resources", "DotNetTokyo.Resources\DotNetTokyo.Resources.csproj", "{AC75F58A-3C64-4C18-B1D5-47636F5E0EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTokyo.Test", "DotNetTokyo.Test\DotNetTokyo.Test.csproj", "{673E1CA6-5EA1-4AC2-A983-C489C72BD9DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AC75F58A-3C64-4C18-B1D5-47636F5E0EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC75F58A-3C64-4C18-B1D5-47636F5E0EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC75F58A-3C64-4C18-B1D5-47636F5E0EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{673E1CA6-5EA1-4AC2-A983-C489C72BD9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673E1CA6-5EA1-4AC2-A983-C489C72BD9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673E1CA6-5EA1-4AC2-A983-C489C72BD9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673E1CA6-5EA1-4AC2-A983-C489C72BD9DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

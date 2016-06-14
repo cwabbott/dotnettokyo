@@ -1,8 +1,6 @@
-using System;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using DotNetTokyo.Web.Services;
-using System.Net.Http;
+using Microsoft.Practices.Unity;
+using System;
 
 namespace DotNetTokyo.Web
 {
@@ -38,7 +36,7 @@ namespace DotNetTokyo.Web
             // container.LoadConfiguration();
 
             // TODO: Register your types here
-            container.RegisterInstance<IMeetupService>(new MeetupService(new HttpClient()));
+            container.RegisterInstance<IMeetupService>(new MeetupService());
         }
     }
 }

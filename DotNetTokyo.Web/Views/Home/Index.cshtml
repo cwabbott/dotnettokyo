@@ -12,51 +12,49 @@
             <p class="lead">@UI.TitleSubheading</p>
             <p><a href="http://www.meetup.com/Tokyo-NET-Developers-Meetup" class="btn btn-primary btn-lg">@UI.CallToActionText &raquo;</a></p>
         </div>
-        </div>
+    </div>
 }
 
-    <div class="row">
-        <div class="col-md-9">
-            <h2>@UI.UpcomingEvents</h2>
-            
-            @if (!Model.Any())
-            {
-                <p>@UI.NoUpcomingEvents</p>
-            }
-            else
-            {
-                foreach (var upcomingEvent in Model)
-                {
-                    
-                    <h3>@upcomingEvent.name</h3>
-                    <p class="lead"><span class="glyphicon glyphicon-calendar"></span>&nbsp;@upcomingEvent.DateTimeLocal.ToLongDateString() - @upcomingEvent.DateTimeLocal.ToLongTimeString()</p>
-                <a href="@upcomingEvent.event_url" class="btn btn-primary">@UI.RSVP&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></a>    
-                
+<div class="row">
+    <div class="col-md-9">
+        <h2>@UI.UpcomingEvents</h2>
+
+        @if (!Model.Any()) {
+            <p>@UI.NoUpcomingEvents</p>
+        }
+        else {
+            foreach (var upcomingEvent in Model) {
+
+                <h3>@upcomingEvent.name</h3>
+                <p class="lead">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    &nbsp;@upcomingEvent.DateTimeLocal.ToLongDateString() - @upcomingEvent.DateTimeLocal.ToLongTimeString()
+                </p>
+                <a href="@upcomingEvent.link" class="btn btn-primary">
+                    @UI.RSVP&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>
+                </a>
+
                 <p>@Html.Raw(upcomingEvent.description)</p>
-                    <address>
-                      <strong>@upcomingEvent.venue.name</strong><br>
-                      @upcomingEvent.venue.address_1<br>
-                        @upcomingEvent.venue.city<br>
-                        @if (!String.IsNullOrWhiteSpace(upcomingEvent.venue.phone))
-                        {
-                            <abbr title="Phone">P:</abbr> @upcomingEvent.venue.phone
-                        }
-                          
-                    </address>
-                }
+                <address>
+                    <strong>@upcomingEvent.venue.name</strong><br>
+                    @upcomingEvent.venue.address_1<br>
+                    @upcomingEvent.venue.city<br>
+                </address>
             }
+        }
 
-            <h2>@UI.HomepageBoxoutHeader1</h2>
-            <p>@UI.HomepageBoxoutContent1</p>
-        </div>
-        <div class="col-md-3">
-            <h2>@UI.HomepageBoxoutHeader2</h2>
-            <p>@UI.HomepageBoxoutContent2</p>
-            <p><a href="http://www.meetup.com/Tokyo-NET-Developers-Meetup" class="btn btn-default">Meetup.com group</a></p>
-        </div>
+        <h2>@UI.HomepageBoxoutHeader1</h2>
+        <p>@UI.HomepageBoxoutContent1</p>
     </div>
+    <div class="col-md-3">
+        <h2>@UI.HomepageBoxoutHeader2</h2>
+        <p>@UI.HomepageBoxoutContent2</p>
+        <p><a href="http://www.meetup.com/Tokyo-NET-Developers-Meetup" class="btn btn-default">Meetup.com group</a></p>
+    </div>
+</div>
 
-    @*<div class="row">
+@*
+<div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
@@ -76,4 +74,5 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
-</div>*@
+</div>
+*@

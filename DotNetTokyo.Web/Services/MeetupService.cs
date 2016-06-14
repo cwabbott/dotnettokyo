@@ -1,34 +1,65 @@
-﻿using System;
+﻿using DotNetTokyo.Web.Models;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
-using DotNetTokyo.Web.Models;
-using Newtonsoft.Json;
+using System.Web.Mvc;
 
 namespace DotNetTokyo.Web.Services
 {
     public class MeetupService : IMeetupService
     {
-        public virtual string UpcomingEventsApiUrl
+        private IMeetupConfiguration _meetupConfig;
+        private HttpClient _httpClient;
+
+        public MeetupService() : this(new MeetupConfiguration(), new HttpClient()) { }
+        public MeetupService(IMeetupConfiguration meetupConfig, HttpClient httpClient)
         {
-            get { return ConfigurationManager.AppSettings["MeetupUpcomingEventsUrl"]; }
+            _meetupConfig = meetupConfig;
+            _httpClient = httpClient;
         }
 
-        private HttpClient client;
-
-        public MeetupService(HttpClient client)
+        public virtual async Task<IEnumerable<Event>> GetUpcomingEvents()
         {
-            this.client = client;
+            var apiUri = ConstructApiUri(
+                "events",
+                new KeyValuePair<string, string>[] {
+                    new KeyValuePair<string, string>("scroll", "next_upcoming")
+                });
+            var events = new List<Event>();
+
+            var result = await CallApi(HttpVerbs.Get, apiUri);
+            if (result.IsSuccessStatusCode) {
+                var eventObjects = JObject.Parse(result.Content.ReadAsStringAsync().Result);
+                foreach (var eventObject in eventObjects)
+                    events.Add(eventObject.Value.ToObject<Event>());
+            }
+
+            return events;
         }
 
-        public async Task<IEnumerable<Event>> GetUpcomingEvents()
+        internal virtual Task<HttpResponseMessage> CallApi(
+            HttpVerbs httpVerb, string apiUrl, HttpContent httpContent = null)
         {
-            var result = await client.GetStringAsync(UpcomingEventsApiUrl);
-            var upcoming = JsonConvert.DeserializeObject<IList<Event>>(result);
-            return upcoming ?? Enumerable.Empty<Event>();
+            switch (httpVerb) {
+                case HttpVerbs.Get:
+                    return _httpClient.GetAsync(apiUrl);
+                default:
+                    return null;
+            }
+        }
+
+        internal virtual string ConstructApiUri(
+            string apiMethod, IEnumerable<KeyValuePair<string, string>> queryStringKeyValues)
+        {
+            var queryString = new List<string>();
+
+            foreach (var qr in queryStringKeyValues)
+                queryString.Add(qr.Key + "=" + HttpUtility.UrlEncode(qr.Value));
+
+            return string.Format("http://{0}/{1}/{2}?{3}",
+                _meetupConfig.ApiDomain, _meetupConfig.EventGroupName, apiMethod, string.Join("&", queryString));
         }
     }
 }
