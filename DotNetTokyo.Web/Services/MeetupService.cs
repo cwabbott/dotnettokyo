@@ -23,17 +23,12 @@ namespace DotNetTokyo.Web.Services
 
         public virtual async Task<IEnumerable<Event>> GetUpcomingEvents()
         {
-            var apiUri = ConstructApiUri(
-                "events",
-                new KeyValuePair<string, string>[] {
-                    new KeyValuePair<string, string>("scroll", "next_upcoming")
-                });
-            var events = new List<Event>();
+            var apiUri = ConstructApiUri("events");
+            var events = Enumerable.Empty<Event>();
 
             var result = await CallApi(HttpVerbs.Get, apiUri);
-            if (result.IsSuccessStatusCode) {
-                events = JsonConvert.DeserializeObject<IEnumerable<Event>>(result.Content.ReadAsStringAsync().Result).ToList();
-            }
+            if (result.IsSuccessStatusCode)
+                events = JsonConvert.DeserializeObject<IEnumerable<Event>>(result.Content.ReadAsStringAsync().Result);
 
             return events;
         }
@@ -49,15 +44,19 @@ namespace DotNetTokyo.Web.Services
             }
         }
 
+        internal virtual string ConstructApiUri(string apiMethod)
+        {
+            return ConstructApiUri(apiMethod, Enumerable.Empty<KeyValuePair<string, string>>());
+        }
         internal virtual string ConstructApiUri(
             string apiMethod, IEnumerable<KeyValuePair<string, string>> queryStringKeyValues)
         {
-            var queryString = new List<string>();
+            var queryString = 
+                string.Join("&", queryStringKeyValues.Select(kv => kv.Key + "=" + HttpUtility.UrlEncode(kv.Value)));
+            if (!string.IsNullOrEmpty(queryString))
+                queryString = "?" + queryString;
 
-            foreach (var qr in queryStringKeyValues)
-                queryString.Add(qr.Key + "=" + HttpUtility.UrlEncode(qr.Value));
-
-            return string.Format("http://{0}/{1}/{2}?{3}",
+            return string.Format("http://{0}/{1}/{2}{3}",
                 _meetupConfig.ApiDomain, _meetupConfig.EventGroupName, apiMethod, string.Join("&", queryString));
         }
     }
