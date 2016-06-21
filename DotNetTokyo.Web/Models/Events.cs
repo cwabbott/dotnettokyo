@@ -5,12 +5,6 @@ using System.Web;
 
 namespace DotNetTokyo.Web.Models
 {
-    public class UpcomingEventsResponse
-    {
-        public Event[] results { get; set; }
-        public Meta meta { get; set; }
-    }
-
     public class Meta
     {
         public string lon { get; set; }
