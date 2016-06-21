@@ -15,19 +15,15 @@ namespace DotNetTokyo.Web.Controllers
     {
         private IMeetupService meetupService;
 
-        public HomeController()
+        public HomeController(IMeetupService meetupService)
         {
-            // TODO: Switch to DI
-            meetupService = new MeetupService(new HttpClient());
+            this.meetupService = meetupService;
         }
 
         [OutputCache(VaryByCustom = "url", Duration = 3600)]
         public async Task<ActionResult> Index()
         {
-            // the meetup is not currently running - prevent blowing up incase meetup.com removes it
-            // return View(await meetupService.GetUpcomingEvents());
-
-            return View(new List<Models.Event>());
+            return View(await meetupService.GetUpcomingEvents());
         }
     }
 }
